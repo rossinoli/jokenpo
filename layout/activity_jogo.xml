@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#E0E0E0"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escolha do App:"
+        android:textSize="20sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="10dp" />
+
+    <ImageView
+        android:id="@+id/imageEscolhaApp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/padrao"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:id="@+id/textResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escolha uma opção abaixo"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="40dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btnPedra"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:elevation="4dp"
+            android:src="@drawable/pedra" />
+
+        <ImageButton
+            android:id="@+id/btnPapel"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:elevation="4dp"
+            android:src="@drawable/papel" />
+
+        <ImageButton
+            android:id="@+id/btnTesoura"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:elevation="4dp"
+            android:src="@drawable/tesoura" />
+
+    </LinearLayout>
+
+</LinearLayout>
