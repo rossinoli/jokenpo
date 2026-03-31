@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             btnJogar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Abre a tela do jogo
+
                     Intent intent = new Intent(MainActivity.this, JogoActivity.class);
                     startActivity(intent);
                 }
