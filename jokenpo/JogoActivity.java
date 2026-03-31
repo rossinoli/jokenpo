@@ -11,7 +11,6 @@ import java.util.Random;
 
 public class JogoActivity extends AppCompatActivity {
 
-    // 1. Declaramos os itens da tela
     private ImageView imageEscolhaApp;
     private TextView textResultado;
     private ImageButton btnPedra, btnPapel, btnTesoura;
@@ -21,20 +20,18 @@ public class JogoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogo);
 
-        // 2. Conectamos o Java com o XML
         imageEscolhaApp = findViewById(R.id.imageEscolhaApp);
         textResultado = findViewById(R.id.textResultado);
         btnPedra = findViewById(R.id.btnPedra);
         btnPapel = findViewById(R.id.btnPapel);
         btnTesoura = findViewById(R.id.btnTesoura);
 
-        // 3. Configuramos os cliques nas mãos
         btnPedra.setOnClickListener(v -> opcaoSelecionada("pedra"));
         btnPapel.setOnClickListener(v -> opcaoSelecionada("papel"));
         btnTesoura.setOnClickListener(v -> opcaoSelecionada("tesoura"));
     }
 
-    // 4. A Lógica do Jogo
+
     @SuppressLint("SetTextI18n")
     public void opcaoSelecionada(String escolhaUsuario) {
 
@@ -56,7 +53,7 @@ public class JogoActivity extends AppCompatActivity {
                 break;
         }
 
-        // 5. Comparação do Vencedor
+      
         if (
                 (escolhaApp.equals("tesoura") && escolhaUsuario.equals("papel")) ||
                         (escolhaApp.equals("pedra") && escolhaUsuario.equals("tesoura")) ||
