@@ -25,6 +25,14 @@
             android:name=".JogoActivity"
             android:exported="false" />
 
+        <activity android:name=".ConfigRoundsActivity" android:exported="false" />
+
+        <activity android:name=".Player1SetupActivity" android:exported="false" />
+
+        <activity android:name=".Player2SetupActivity" android:exported="false" />
+
+        <activity android:name=".JogoDuploActivity" android:exported="false" />
+
     </application>
 
 </manifest>
