@@ -26,12 +26,23 @@
         android:scaleType="fitCenter" />
 
     <Button
-        android:id="@+id/btnJogar"
-        android:layout_width="200dp"
+        android:id="@+id/btnModoRobo"
+        android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="JOGAR AGORA"
+        android:text="JOGAR CONTRA ROBÔ"
         android:textSize="18sp"
         android:backgroundTint="#3D8DDC"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp" />
+
+   <Button
+        android:id="@+id/btnModoAmigo"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="JOGAR 2 PLAYERS"
+        android:textSize="18sp"
+        android:backgroundTint="#4CAF50"
         android:textColor="#FFFFFF"
         android:elevation="8dp" />
 

@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutJogoDuplo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#E0E0E0"
+    android:background="#3D8DDC"
     android:padding="20dp">
 
     <TextView
+        android:id="@+id/textPlacar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Escolha do App:"
-        android:textSize="20sp"
-        android:textColor="#333333"
+        android:text="P1: 0  |  P2: 0"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
         android:layout_marginBottom="10dp" />
 
-    <ImageView
-        android:id="@+id/imageEscolhaApp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/padrao"
-        android:scaleType="fitCenter"
-        android:layout_marginBottom="30dp" />
-
     <TextView
-        android:id="@+id/textResultado"
+        android:id="@+id/textRodada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Escolha uma opção abaixo"
-        android:textSize="24sp"
+        android:text="Rodada 1"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginBottom="40dp" />
+
+    <TextView
+        android:id="@+id/textVezDoJogador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VEZ DE: PLAYER 1"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="#333333"
+        android:textColor="#FFFFFF"
         android:layout_marginBottom="40dp" />
 
     <LinearLayout
@@ -40,45 +44,43 @@
         android:gravity="center">
 
         <ImageButton
-            android:id="@+id/btnPedra"
+            android:id="@+id/btnPedraDuplo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
             android:background="#FFFFFF"
             android:scaleType="fitCenter"
-            android:elevation="4dp"
-            android:src="@drawable/pedra" />
+            android:src="@drawable/pedra"
+            android:elevation="4dp" />
 
         <ImageButton
-            android:id="@+id/btnPapel"
+            android:id="@+id/btnPapelDuplo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
             android:background="#FFFFFF"
             android:scaleType="fitCenter"
-            android:elevation="4dp"
-            android:src="@drawable/papel" />
+            android:src="@drawable/papel"
+            android:elevation="4dp" />
 
         <ImageButton
-            android:id="@+id/btnTesoura"
+            android:id="@+id/btnTesouraDuplo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
             android:background="#FFFFFF"
             android:scaleType="fitCenter"
-            android:elevation="4dp"
-            android:src="@drawable/tesoura" />
+            android:src="@drawable/tesoura"
+            android:elevation="4dp" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:text="Voltar ao Menu"
-        android:backgroundTint="#757575"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Não deixe o oponente ver sua escolha!"
         android:textColor="#FFFFFF"
-        android:elevation="4dp" />
+        android:layout_marginTop="30dp"
+        android:textStyle="italic" />
 
 </LinearLayout>
