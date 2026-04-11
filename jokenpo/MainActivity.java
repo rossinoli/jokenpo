@@ -11,25 +11,41 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnJogar;
+    private Button btnModoRobo;
+    private Button btnModoAmigo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnJogar = findViewById(R.id.btnJogar);
+        btnModoRobo = findViewById(R.id.btnModoRobo);
+        btnModoAmigo = findViewById(R.id.btnModoAmigo);
 
-        if (btnJogar != null) {
-            btnJogar.setOnClickListener(new View.OnClickListener() {
+        // MODO ROBÔ (1 Player)
+        if (btnModoRobo != null) {
+            btnModoRobo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     Intent intent = new Intent(MainActivity.this, JogoActivity.class);
                     startActivity(intent);
                 }
             });
         }
+
+        // MODO AMIGO (2 Players) - ATUALIZADO ✅
+        if (btnModoAmigo != null) {
+            btnModoAmigo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Agora abre a tela de configuração de rodadas
+                    Intent intent = new Intent(MainActivity.this, ConfigRoundsActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        // Configuração das barras do sistema
         View viewPrincipal = findViewById(R.id.main);
         if (viewPrincipal != null) {
             ViewCompat.setOnApplyWindowInsetsListener(viewPrincipal, (v, insets) -> {

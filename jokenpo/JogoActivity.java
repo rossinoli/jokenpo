@@ -3,6 +3,7 @@ package com.example.jokenpo;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ public class JogoActivity extends AppCompatActivity {
     private ImageView imageEscolhaApp;
     private TextView textResultado;
     private ImageButton btnPedra, btnPapel, btnTesoura;
+    private Button btnVoltar; // Declaração do novo botão
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,22 +27,30 @@ public class JogoActivity extends AppCompatActivity {
         btnPedra = findViewById(R.id.btnPedra);
         btnPapel = findViewById(R.id.btnPapel);
         btnTesoura = findViewById(R.id.btnTesoura);
+        btnVoltar = findViewById(R.id.btnVoltar); // Conectando o botão de voltar
 
+        // Cliques nas opções de jogo
         btnPedra.setOnClickListener(v -> opcaoSelecionada("pedra"));
         btnPapel.setOnClickListener(v -> opcaoSelecionada("papel"));
         btnTesoura.setOnClickListener(v -> opcaoSelecionada("tesoura"));
-    }
 
+        // Lógica para o botão Voltar
+        if (btnVoltar != null) {
+            btnVoltar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish(); // Fecha esta tela e volta para a MainActivity
+                }
+            });
+        }
+    }
 
     @SuppressLint("SetTextI18n")
     public void opcaoSelecionada(String escolhaUsuario) {
-
-        // Sorteio do App (0 = pedra, 1 = papel, 2 = tesoura)
         int numeroAleatorio = new Random().nextInt(3);
         String[] opcoes = {"pedra", "papel", "tesoura"};
         String escolhaApp = opcoes[numeroAleatorio];
 
-        // Atualiza a imagem do App de acordo com o sorteio
         switch (escolhaApp) {
             case "pedra":
                 imageEscolhaApp.setImageResource(R.drawable.pedra);
@@ -53,20 +63,19 @@ public class JogoActivity extends AppCompatActivity {
                 break;
         }
 
-      
         if (
                 (escolhaApp.equals("tesoura") && escolhaUsuario.equals("papel")) ||
                         (escolhaApp.equals("pedra") && escolhaUsuario.equals("tesoura")) ||
                         (escolhaApp.equals("papel") && escolhaUsuario.equals("pedra"))
-        ) { // App Ganhou
+        ) {
             textResultado.setText("Você Perdeu! :( ");
         } else if (
                 (escolhaUsuario.equals("tesoura") && escolhaApp.equals("papel")) ||
                         (escolhaUsuario.equals("pedra") && escolhaApp.equals("tesoura")) ||
                         (escolhaUsuario.equals("papel") && escolhaApp.equals("pedra"))
-        ) { // Usuário Ganhou
+        ) {
             textResultado.setText("Você Ganhou! :D ");
-        } else { // Empate
+        } else {
             textResultado.setText("Empatamos! ;) ");
         }
     }
